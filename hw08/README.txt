@@ -1,0 +1,1 @@
+﻿In this Sonic the Hedgehog game, the objective is to get the big ring before the badnik (enemy) catches you. It is important to note that as soon as the game starts, the badnik starts chasing you so be ready! Enjoy! - Nakul Kuttua

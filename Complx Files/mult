@@ -1,0 +1,38 @@
+;; Pseudocode
+
+;; Multiply
+         
+;;    int mult(int a, int b) {
+;;        int product = 0;  // will hold the final value
+;;        while (b > 0) {
+;;            product += a; // increments the product value by a
+;;            b--;          // decrements b
+;;        }
+;;        return product;   // return product (which is a * b)
+;;    }
+
+
+.orig x3000
+    ;; you do not need to write anything here
+HALT
+
+mult
+
+    ADD R6, R6, #-3 ;; make space for the return value, return address, and old frame pointer
+    STR R5, R6, #0  ;; puts old frame pointer (value in R5) 0 spaces from R6
+    STR R7, R6, #1  ;; puts the return address (value in R7) 1 space below R6
+
+    ADD R6, R6, #-1 ;; make space for at least 1 local variable (will not be used but still necessary)
+    ADD R5, R6, 0   ;; set R5 = R6 
+
+    ADD R6, R6, #-5 ;; make space for the 5 registers R0-R4
+    STR R4, R6, #0
+    STR R3, R6, #1
+    STR R2, R6, #2
+    STR R1, R6, #3
+    STR R0, R6, #4
+
+    RET
+
+STACK .fill xF000
+.end

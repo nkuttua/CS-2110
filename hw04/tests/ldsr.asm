@@ -1,0 +1,16 @@
+.orig x0000
+
+AND R1, R1, 0
+ADD R1, R1, 2
+ADD R2, R1, 2
+AND R0, R0, 0
+LDSR R3, R1, R2
+
+HALT
+
+MYLABEL .fill x0015
+MYLABEL2 .fill x0002
+
+.end
+
+;; R1 = x0002, R2 = x0004, R3 = x0015
